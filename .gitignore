@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual Environments
+env/
+venv/
+
+# Models
+models/*.h5
+models/*.keras
+
+# Data
+data_8000/
+
+# Logs
+*.log
+
+# macOS system files
+.DS_Store
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/

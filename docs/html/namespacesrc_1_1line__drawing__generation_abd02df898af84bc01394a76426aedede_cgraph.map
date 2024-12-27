@@ -1,0 +1,9 @@
+<map id="src.line_drawing_generation.generate_multiple_images" name="src.line_drawing_generation.generate_multiple_images">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,71,242,111"/>
+<area shape="rect" id="Node000002" href="$namespacesrc_1_1line__drawing__generation.html#a4e5c53066c230f55956cef9e0b7a9a95" title=" " alt="" coords="293,5,522,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,67,301,47,302,53,216,73"/>
+<area shape="rect" id="Node000003" href="$namespacesrc_1_1line__drawing__generation.html#a943c6ad69926a01c91f66a0fa7e94021" title=" " alt="" coords="290,71,526,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="242,88,274,88,274,94,242,94"/>
+<area shape="rect" id="Node000004" href="$namespacesrc_1_1line__drawing__generation.html#ae3c6a812bf2cc15bf1e609e6234e4ae0" title=" " alt="" coords="290,136,526,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="216,109,302,129,301,135,215,115"/>
+</map>

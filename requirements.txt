@@ -1,0 +1,9 @@
+tensorflow
+svgwrite
+svglib
+reportlab
+Pillow
+IPython
+pdf2image
+cairosvg
+google-colab
