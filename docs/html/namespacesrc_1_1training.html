@@ -97,22 +97,31 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae0c284e44ed6b90876e64672c6566851" id="r_ae0c284e44ed6b90876e64672c6566851"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0c284e44ed6b90876e64672c6566851">compile_model</a> (model, learning_rate=1e-4)</td></tr>
-<tr class="separator:ae0c284e44ed6b90876e64672c6566851"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab730b0abad7aebde140c6a1cddb9164e" id="r_ab730b0abad7aebde140c6a1cddb9164e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab730b0abad7aebde140c6a1cddb9164e">get_callbacks</a> (model_checkpoint_path='models/unet_best_model.keras')</td></tr>
-<tr class="separator:ab730b0abad7aebde140c6a1cddb9164e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b6879a7c53233c9f0349fbec3e16d53" id="r_a6b6879a7c53233c9f0349fbec3e16d53"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b6879a7c53233c9f0349fbec3e16d53">train_model</a> (model, train_gen, val_gen, X_train, X_val, batch_size=16, epochs=100)</td></tr>
-<tr class="separator:a6b6879a7c53233c9f0349fbec3e16d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26c806475e10a3af3feaf95e609bacbc" id="r_a26c806475e10a3af3feaf95e609bacbc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26c806475e10a3af3feaf95e609bacbc">compile_model</a> (model, loss='binary_crossentropy', learning_rate=1e-4)</td></tr>
+<tr class="separator:a26c806475e10a3af3feaf95e609bacbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a923e330064e9f49771355a3ad2d1abda" id="r_a923e330064e9f49771355a3ad2d1abda"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a923e330064e9f49771355a3ad2d1abda">get_callbacks</a> (model_checkpoint_path='models/best_model.keras')</td></tr>
+<tr class="separator:a923e330064e9f49771355a3ad2d1abda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81da746d9faff2e7c6e7f8a2c8944073" id="r_a81da746d9faff2e7c6e7f8a2c8944073"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81da746d9faff2e7c6e7f8a2c8944073">train_model</a> (model, train_gen, val_gen, X_train, X_val, batch_size=16, epochs=100, model_name=&quot;model&quot;)</td></tr>
+<tr class="separator:a81da746d9faff2e7c6e7f8a2c8944073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af36ece9e32e12cada47cd0795d42e770" id="r_af36ece9e32e12cada47cd0795d42e770"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af36ece9e32e12cada47cd0795d42e770">train_unet</a> (train_gen, val_gen, X_train, X_val)</td></tr>
+<tr class="separator:af36ece9e32e12cada47cd0795d42e770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af765eae7f16cca74089eadb7b5d34b38" id="r_af765eae7f16cca74089eadb7b5d34b38"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af765eae7f16cca74089eadb7b5d34b38">train_advanced_model</a> (X_train, y_train, X_val, y_val, batch_size=32, epochs=50)</td></tr>
+<tr class="separator:af765eae7f16cca74089eadb7b5d34b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd4aa68a15bc53fef7e4eeef7ddec5de" id="r_acd4aa68a15bc53fef7e4eeef7ddec5de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd4aa68a15bc53fef7e4eeef7ddec5de">train_regression_model</a> (train_images, train_labels, val_images, val_labels, batch_size=32, epochs=13)</td></tr>
+<tr class="separator:acd4aa68a15bc53fef7e4eeef7ddec5de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa677f7b8ae7b4105b50e1cfa02617df" id="r_afa677f7b8ae7b4105b50e1cfa02617df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa677f7b8ae7b4105b50e1cfa02617df">train_enhanced_patch_transformer</a> (X_train, y_train, X_val, y_val, batch_size=32, epochs=50)</td></tr>
+<tr class="separator:afa677f7b8ae7b4105b50e1cfa02617df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">@file training.py
-@brief Module for compiling and training the U-Net model.
+@brief Module for compiling and training models.
 
-This module provides functions to compile the U-Net model, set up callbacks,
-and train the model using the provided data generators.
+This module provides functions to compile models, set up callbacks, and train them using
+the provided data generators. It supports multiple architectures, including U-Net, Advanced Line Prediction Model,
+Regression Model, and the Enhanced Patch Transformer Model.
 </pre> </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ae0c284e44ed6b90876e64672c6566851" name="ae0c284e44ed6b90876e64672c6566851"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0c284e44ed6b90876e64672c6566851">&#9670;&#160;</a></span>compile_model()</h2>
+<a id="a26c806475e10a3af3feaf95e609bacbc" name="a26c806475e10a3af3feaf95e609bacbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c806475e10a3af3feaf95e609bacbc">&#9670;&#160;</a></span>compile_model()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,45 +134,51 @@ and train the model using the provided data generators.
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>loss</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'binary_crossentropy'</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>learning_rate</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1e-4</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">@brief Compiles the U-Net model with specified optimizer and loss function.
+<pre class="fragment">@brief Compiles a Keras model with the specified optimizer and loss function.
 
-This function configures the model for training by setting the optimizer, loss,
-and evaluation metrics.
+This function configures the model for training by setting the optimizer, loss, and evaluation metrics.
 
 @param model (Model): Keras model to compile.
+@param loss (str or function, optional): Loss function to use. Default is 'binary_crossentropy'.
 @param learning_rate (float, optional): Learning rate for the optimizer. Default is 1e-4.
 
 @return Model: Compiled Keras model.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="training_8py_source.html#l00012">12</a> of file <a class="el" href="training_8py_source.html">training.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span><span class="keyword">def </span>compile_model(model, learning_rate=1e-4):</div>
-<div class="line"><span class="lineno">   13</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   14</span><span class="stringliteral">    @brief Compiles the U-Net model with specified optimizer and loss function.</span></div>
-<div class="line"><span class="lineno">   15</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">   16</span><span class="stringliteral">    This function configures the model for training by setting the optimizer, loss,</span></div>
-<div class="line"><span class="lineno">   17</span><span class="stringliteral">    and evaluation metrics.</span></div>
+<p class="definition">Definition at line <a class="el" href="training_8py_source.html#l00015">15</a> of file <a class="el" href="training_8py_source.html">training.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span><span class="keyword">def </span>compile_model(model, loss=&#39;binary_crossentropy&#39;, learning_rate=1e-4):</div>
+<div class="line"><span class="lineno">   16</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   17</span><span class="stringliteral">    @brief Compiles a Keras model with the specified optimizer and loss function.</span></div>
 <div class="line"><span class="lineno">   18</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">   19</span><span class="stringliteral">    @param model (Model): Keras model to compile.</span></div>
-<div class="line"><span class="lineno">   20</span><span class="stringliteral">    @param learning_rate (float, optional): Learning rate for the optimizer. Default is 1e-4.</span></div>
-<div class="line"><span class="lineno">   21</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">   22</span><span class="stringliteral">    @return Model: Compiled Keras model.</span></div>
-<div class="line"><span class="lineno">   23</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   24</span>    model.compile(</div>
-<div class="line"><span class="lineno">   25</span>        optimizer=Adam(learning_rate=learning_rate),</div>
-<div class="line"><span class="lineno">   26</span>        loss=<span class="stringliteral">&#39;binary_crossentropy&#39;</span>,</div>
-<div class="line"><span class="lineno">   27</span>        metrics=[<span class="stringliteral">&#39;accuracy&#39;</span>]</div>
-<div class="line"><span class="lineno">   28</span>    )</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">return</span> model</div>
-<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   19</span><span class="stringliteral">    This function configures the model for training by setting the optimizer, loss, and evaluation metrics.</span></div>
+<div class="line"><span class="lineno">   20</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">   21</span><span class="stringliteral">    @param model (Model): Keras model to compile.</span></div>
+<div class="line"><span class="lineno">   22</span><span class="stringliteral">    @param loss (str or function, optional): Loss function to use. Default is &#39;binary_crossentropy&#39;.</span></div>
+<div class="line"><span class="lineno">   23</span><span class="stringliteral">    @param learning_rate (float, optional): Learning rate for the optimizer. Default is 1e-4.</span></div>
+<div class="line"><span class="lineno">   24</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">   25</span><span class="stringliteral">    @return Model: Compiled Keras model.</span></div>
+<div class="line"><span class="lineno">   26</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   27</span>    model.compile(</div>
+<div class="line"><span class="lineno">   28</span>        optimizer=Adam(learning_rate=learning_rate),</div>
+<div class="line"><span class="lineno">   29</span>        loss=loss,</div>
+<div class="line"><span class="lineno">   30</span>        metrics=[<span class="stringliteral">&#39;accuracy&#39;</span>]</div>
+<div class="line"><span class="lineno">   31</span>    )</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">return</span> model</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ab730b0abad7aebde140c6a1cddb9164e" name="ab730b0abad7aebde140c6a1cddb9164e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab730b0abad7aebde140c6a1cddb9164e">&#9670;&#160;</a></span>get_callbacks()</h2>
+<a id="a923e330064e9f49771355a3ad2d1abda" name="a923e330064e9f49771355a3ad2d1abda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a923e330064e9f49771355a3ad2d1abda">&#9670;&#160;</a></span>get_callbacks()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,7 +186,7 @@ and evaluation metrics.
         <tr>
           <td class="memname">src.training.get_callbacks </td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>model_checkpoint_path</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'models/unet_best_model.keras'</span></td><td>)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>model_checkpoint_path</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'models/best_model.keras'</span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -181,41 +196,227 @@ and evaluation metrics.
 This function sets up EarlyStopping to halt training when validation loss stops improving
 and ModelCheckpoint to save the best model during training.
 
-@param model_checkpoint_path (str, optional): Path to save the best model. Default is 'unet_best_model.keras'.
+@param model_checkpoint_path (str, optional): Path to save the best model. Default is 'models/best_model.keras'.
 
 @return list: List of callback instances.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="training_8py_source.html#l00031">31</a> of file <a class="el" href="training_8py_source.html">training.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span><span class="keyword">def </span>get_callbacks(model_checkpoint_path=&#39;models/unet_best_model.keras&#39;):</div>
-<div class="line"><span class="lineno">   32</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   33</span><span class="stringliteral">    @brief Creates callbacks for training.</span></div>
-<div class="line"><span class="lineno">   34</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">   35</span><span class="stringliteral">    This function sets up EarlyStopping to halt training when validation loss stops improving</span></div>
-<div class="line"><span class="lineno">   36</span><span class="stringliteral">    and ModelCheckpoint to save the best model during training.</span></div>
-<div class="line"><span class="lineno">   37</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">   38</span><span class="stringliteral">    @param model_checkpoint_path (str, optional): Path to save the best model. Default is &#39;unet_best_model.keras&#39;.</span></div>
-<div class="line"><span class="lineno">   39</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">   40</span><span class="stringliteral">    @return list: List of callback instances.</span></div>
-<div class="line"><span class="lineno">   41</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   42</span>    earlystopper = EarlyStopping(</div>
-<div class="line"><span class="lineno">   43</span>        monitor=<span class="stringliteral">&#39;val_loss&#39;</span>,</div>
-<div class="line"><span class="lineno">   44</span>        patience=10,</div>
-<div class="line"><span class="lineno">   45</span>        verbose=1,</div>
-<div class="line"><span class="lineno">   46</span>        restore_best_weights=<span class="keyword">True</span></div>
-<div class="line"><span class="lineno">   47</span>    )</div>
-<div class="line"><span class="lineno">   48</span>    checkpointer = ModelCheckpoint(</div>
-<div class="line"><span class="lineno">   49</span>        model_checkpoint_path,</div>
-<div class="line"><span class="lineno">   50</span>        monitor=<span class="stringliteral">&#39;val_loss&#39;</span>,</div>
-<div class="line"><span class="lineno">   51</span>        verbose=1,</div>
-<div class="line"><span class="lineno">   52</span>        save_best_only=<span class="keyword">True</span></div>
-<div class="line"><span class="lineno">   53</span>    )</div>
-<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> [earlystopper, checkpointer]</div>
-<div class="line"><span class="lineno">   55</span> </div>
+<p class="definition">Definition at line <a class="el" href="training_8py_source.html#l00035">35</a> of file <a class="el" href="training_8py_source.html">training.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span><span class="keyword">def </span>get_callbacks(model_checkpoint_path=&#39;models/best_model.keras&#39;):</div>
+<div class="line"><span class="lineno">   36</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   37</span><span class="stringliteral">    @brief Creates callbacks for training.</span></div>
+<div class="line"><span class="lineno">   38</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">   39</span><span class="stringliteral">    This function sets up EarlyStopping to halt training when validation loss stops improving</span></div>
+<div class="line"><span class="lineno">   40</span><span class="stringliteral">    and ModelCheckpoint to save the best model during training.</span></div>
+<div class="line"><span class="lineno">   41</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">   42</span><span class="stringliteral">    @param model_checkpoint_path (str, optional): Path to save the best model. Default is &#39;models/best_model.keras&#39;.</span></div>
+<div class="line"><span class="lineno">   43</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">   44</span><span class="stringliteral">    @return list: List of callback instances.</span></div>
+<div class="line"><span class="lineno">   45</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   46</span>    earlystopper = EarlyStopping(</div>
+<div class="line"><span class="lineno">   47</span>        monitor=<span class="stringliteral">&#39;val_loss&#39;</span>,</div>
+<div class="line"><span class="lineno">   48</span>        patience=10,</div>
+<div class="line"><span class="lineno">   49</span>        verbose=1,</div>
+<div class="line"><span class="lineno">   50</span>        restore_best_weights=<span class="keyword">True</span></div>
+<div class="line"><span class="lineno">   51</span>    )</div>
+<div class="line"><span class="lineno">   52</span>    checkpointer = ModelCheckpoint(</div>
+<div class="line"><span class="lineno">   53</span>        model_checkpoint_path,</div>
+<div class="line"><span class="lineno">   54</span>        monitor=<span class="stringliteral">&#39;val_loss&#39;</span>,</div>
+<div class="line"><span class="lineno">   55</span>        verbose=1,</div>
+<div class="line"><span class="lineno">   56</span>        save_best_only=<span class="keyword">True</span></div>
+<div class="line"><span class="lineno">   57</span>    )</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">return</span> [earlystopper, checkpointer]</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a6b6879a7c53233c9f0349fbec3e16d53" name="a6b6879a7c53233c9f0349fbec3e16d53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b6879a7c53233c9f0349fbec3e16d53">&#9670;&#160;</a></span>train_model()</h2>
+<a id="af765eae7f16cca74089eadb7b5d34b38" name="af765eae7f16cca74089eadb7b5d34b38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af765eae7f16cca74089eadb7b5d34b38">&#9670;&#160;</a></span>train_advanced_model()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.training.train_advanced_model </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>X_train</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_train</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>X_val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>batch_size</em></span><span class="paramdefsep"> = </span><span class="paramdefval">32</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>epochs</em></span><span class="paramdefsep"> = </span><span class="paramdefval">50</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">@brief Trains the Advanced Line Prediction Model for line segmentation with confidence scores.
+
+@param X_train (numpy.ndarray): Training images.
+@param y_train (numpy.ndarray): Training labels (coordinates + confidence scores).
+@param X_val (numpy.ndarray): Validation images.
+@param y_val (numpy.ndarray): Validation labels (coordinates + confidence scores).
+@param batch_size (int, optional): Number of samples per batch. Default is 32.
+@param epochs (int, optional): Maximum number of training epochs. Default is 50.
+
+@return History: Training history for Advanced Line Prediction Model.
+</pre> 
+<p class="definition">Definition at line <a class="el" href="training_8py_source.html#l00109">109</a> of file <a class="el" href="training_8py_source.html">training.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span><span class="keyword">def </span>train_advanced_model(X_train, y_train, X_val, y_val, batch_size=32, epochs=50):</div>
+<div class="line"><span class="lineno">  110</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">  111</span><span class="stringliteral">    @brief Trains the Advanced Line Prediction Model for line segmentation with confidence scores.</span></div>
+<div class="line"><span class="lineno">  112</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">  113</span><span class="stringliteral">    @param X_train (numpy.ndarray): Training images.</span></div>
+<div class="line"><span class="lineno">  114</span><span class="stringliteral">    @param y_train (numpy.ndarray): Training labels (coordinates + confidence scores).</span></div>
+<div class="line"><span class="lineno">  115</span><span class="stringliteral">    @param X_val (numpy.ndarray): Validation images.</span></div>
+<div class="line"><span class="lineno">  116</span><span class="stringliteral">    @param y_val (numpy.ndarray): Validation labels (coordinates + confidence scores).</span></div>
+<div class="line"><span class="lineno">  117</span><span class="stringliteral">    @param batch_size (int, optional): Number of samples per batch. Default is 32.</span></div>
+<div class="line"><span class="lineno">  118</span><span class="stringliteral">    @param epochs (int, optional): Maximum number of training epochs. Default is 50.</span></div>
+<div class="line"><span class="lineno">  119</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">  120</span><span class="stringliteral">    @return History: Training history for Advanced Line Prediction Model.</span></div>
+<div class="line"><span class="lineno">  121</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">  122</span>    model = create_advanced_model()</div>
+<div class="line"><span class="lineno">  123</span>    model = compile_model(model, loss=advanced_loss, learning_rate=5e-4)</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>    callbacks = get_callbacks(model_checkpoint_path=<span class="stringliteral">&#39;models/advanced_model_best_model.keras&#39;</span>)</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>    history = model.fit(</div>
+<div class="line"><span class="lineno">  128</span>        X_train, y_train,</div>
+<div class="line"><span class="lineno">  129</span>        validation_data=(X_val, y_val),</div>
+<div class="line"><span class="lineno">  130</span>        batch_size=batch_size,</div>
+<div class="line"><span class="lineno">  131</span>        epochs=epochs,</div>
+<div class="line"><span class="lineno">  132</span>        callbacks=callbacks</div>
+<div class="line"><span class="lineno">  133</span>    )</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">return</span> history</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span> </div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacesrc_1_1training_af765eae7f16cca74089eadb7b5d34b38_cgraph.png" border="0" usemap="#anamespacesrc_1_1training_af765eae7f16cca74089eadb7b5d34b38_cgraph" alt=""/></div>
+<map name="anamespacesrc_1_1training_af765eae7f16cca74089eadb7b5d34b38_cgraph" id="anamespacesrc_1_1training_af765eae7f16cca74089eadb7b5d34b38_cgraph">
+<area shape="rect" title=" " alt="" coords="5,35,132,75"/>
+<area shape="rect" href="namespacesrc_1_1training.html#a26c806475e10a3af3feaf95e609bacbc" title=" " alt="" coords="197,5,332,46"/>
+<area shape="poly" title=" " alt="" coords="132,43,181,35,182,41,132,48"/>
+<area shape="rect" href="namespacesrc_1_1training.html#a923e330064e9f49771355a3ad2d1abda" title=" " alt="" coords="180,70,349,96"/>
+<area shape="poly" title=" " alt="" coords="132,61,165,66,164,71,132,67"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afa677f7b8ae7b4105b50e1cfa02617df" name="afa677f7b8ae7b4105b50e1cfa02617df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa677f7b8ae7b4105b50e1cfa02617df">&#9670;&#160;</a></span>train_enhanced_patch_transformer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.training.train_enhanced_patch_transformer </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>X_train</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_train</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>X_val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>batch_size</em></span><span class="paramdefsep"> = </span><span class="paramdefval">32</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>epochs</em></span><span class="paramdefsep"> = </span><span class="paramdefval">50</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">@brief Trains the Enhanced Patch Transformer Model for line segmentation.
+
+@param X_train (numpy.ndarray): Training images.
+@param y_train (numpy.ndarray): Training labels (coordinates only).
+@param X_val (numpy.ndarray): Validation images.
+@param y_val (numpy.ndarray): Validation labels (coordinates only).
+@param batch_size (int, optional): Number of samples per batch. Default is 32.
+@param epochs (int, optional): Maximum number of training epochs. Default is 50.
+
+@return History: Training history for the Enhanced Patch Transformer Model.
+</pre> 
+<p class="definition">Definition at line <a class="el" href="training_8py_source.html#l00165">165</a> of file <a class="el" href="training_8py_source.html">training.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span><span class="keyword">def </span>train_enhanced_patch_transformer(X_train, y_train, X_val, y_val, batch_size=32, epochs=50):</div>
+<div class="line"><span class="lineno">  166</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">  167</span><span class="stringliteral">    @brief Trains the Enhanced Patch Transformer Model for line segmentation.</span></div>
+<div class="line"><span class="lineno">  168</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">  169</span><span class="stringliteral">    @param X_train (numpy.ndarray): Training images.</span></div>
+<div class="line"><span class="lineno">  170</span><span class="stringliteral">    @param y_train (numpy.ndarray): Training labels (coordinates only).</span></div>
+<div class="line"><span class="lineno">  171</span><span class="stringliteral">    @param X_val (numpy.ndarray): Validation images.</span></div>
+<div class="line"><span class="lineno">  172</span><span class="stringliteral">    @param y_val (numpy.ndarray): Validation labels (coordinates only).</span></div>
+<div class="line"><span class="lineno">  173</span><span class="stringliteral">    @param batch_size (int, optional): Number of samples per batch. Default is 32.</span></div>
+<div class="line"><span class="lineno">  174</span><span class="stringliteral">    @param epochs (int, optional): Maximum number of training epochs. Default is 50.</span></div>
+<div class="line"><span class="lineno">  175</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">  176</span><span class="stringliteral">    @return History: Training history for the Enhanced Patch Transformer Model.</span></div>
+<div class="line"><span class="lineno">  177</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">  178</span>    model = create_enhanced_patch_transformer_model()</div>
+<div class="line"><span class="lineno">  179</span>    model = compile_model(model, loss=scaled_loss, learning_rate=1e-3)</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>    callbacks = get_callbacks(model_checkpoint_path=<span class="stringliteral">&#39;models/enhanced_patch_transformer_best_model.keras&#39;</span>)</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>    history = model.fit(</div>
+<div class="line"><span class="lineno">  184</span>        x=X_train,</div>
+<div class="line"><span class="lineno">  185</span>        y=y_train,</div>
+<div class="line"><span class="lineno">  186</span>        validation_data=(X_val, y_val),</div>
+<div class="line"><span class="lineno">  187</span>        batch_size=batch_size,</div>
+<div class="line"><span class="lineno">  188</span>        epochs=epochs,</div>
+<div class="line"><span class="lineno">  189</span>        callbacks=callbacks</div>
+<div class="line"><span class="lineno">  190</span>    )</div>
+<div class="line"><span class="lineno">  191</span>    <span class="keywordflow">return</span> history</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacesrc_1_1training_afa677f7b8ae7b4105b50e1cfa02617df_cgraph.png" border="0" usemap="#anamespacesrc_1_1training_afa677f7b8ae7b4105b50e1cfa02617df_cgraph" alt=""/></div>
+<map name="anamespacesrc_1_1training_afa677f7b8ae7b4105b50e1cfa02617df_cgraph" id="anamespacesrc_1_1training_afa677f7b8ae7b4105b50e1cfa02617df_cgraph">
+<area shape="rect" title=" " alt="" coords="5,35,202,75"/>
+<area shape="rect" href="namespacesrc_1_1training.html#a26c806475e10a3af3feaf95e609bacbc" title=" " alt="" coords="267,5,402,46"/>
+<area shape="poly" title=" " alt="" coords="202,40,251,33,252,39,203,45"/>
+<area shape="rect" href="namespacesrc_1_1training.html#a923e330064e9f49771355a3ad2d1abda" title=" " alt="" coords="250,70,419,96"/>
+<area shape="poly" title=" " alt="" coords="203,64,235,68,234,74,202,70"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a81da746d9faff2e7c6e7f8a2c8944073" name="a81da746d9faff2e7c6e7f8a2c8944073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81da746d9faff2e7c6e7f8a2c8944073">&#9670;&#160;</a></span>train_model()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -253,11 +454,16 @@ and ModelCheckpoint to save the best model during training.
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>epochs</em></span><span class="paramdefsep"> = </span><span class="paramdefval">100</span>&#160;)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>epochs</em></span><span class="paramdefsep"> = </span><span class="paramdefval">100</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>model_name</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;model&quot;</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">@brief Trains the U-Net model using the provided generators.
+<pre class="fragment">@brief Trains a Keras model using the provided generators.
 
 This function fits the model on the training data using data generators for augmentation,
 validates on the validation data, and applies callbacks for early stopping and model checkpointing.
@@ -269,46 +475,213 @@ validates on the validation data, and applies callbacks for early stopping and m
 @param X_val (numpy.ndarray): Number of validation samples.
 @param batch_size (int, optional): Number of samples per batch. Default is 16.
 @param epochs (int, optional): Maximum number of training epochs. Default is 100.
+@param model_name (str, optional): Name of the model for saving the best weights. Default is "model".
 
 @return History: Keras History object containing training history.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="training_8py_source.html#l00056">56</a> of file <a class="el" href="training_8py_source.html">training.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   56</span><span class="keyword">def </span>train_model(model, train_gen, val_gen, X_train, X_val, batch_size=16, epochs=100):</div>
-<div class="line"><span class="lineno">   57</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   58</span><span class="stringliteral">    @brief Trains the U-Net model using the provided generators.</span></div>
-<div class="line"><span class="lineno">   59</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">   60</span><span class="stringliteral">    This function fits the model on the training data using data generators for augmentation,</span></div>
-<div class="line"><span class="lineno">   61</span><span class="stringliteral">    validates on the validation data, and applies callbacks for early stopping and model checkpointing.</span></div>
-<div class="line"><span class="lineno">   62</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">   63</span><span class="stringliteral">    @param model (Model): Compiled Keras model to train.</span></div>
-<div class="line"><span class="lineno">   64</span><span class="stringliteral">    @param train_gen (generator): Training data generator.</span></div>
-<div class="line"><span class="lineno">   65</span><span class="stringliteral">    @param val_gen (generator): Validation data generator.</span></div>
-<div class="line"><span class="lineno">   66</span><span class="stringliteral">    @param X_train (numpy.ndarray): Number of training samples.</span></div>
-<div class="line"><span class="lineno">   67</span><span class="stringliteral">    @param X_val (numpy.ndarray): Number of validation samples.</span></div>
-<div class="line"><span class="lineno">   68</span><span class="stringliteral">    @param batch_size (int, optional): Number of samples per batch. Default is 16.</span></div>
-<div class="line"><span class="lineno">   69</span><span class="stringliteral">    @param epochs (int, optional): Maximum number of training epochs. Default is 100.</span></div>
-<div class="line"><span class="lineno">   70</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">   71</span><span class="stringliteral">    @return History: Keras History object containing training history.</span></div>
-<div class="line"><span class="lineno">   72</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   73</span>    callbacks = get_callbacks()</div>
-<div class="line"><span class="lineno">   74</span> </div>
-<div class="line"><span class="lineno">   75</span>    history = model.fit(</div>
-<div class="line"><span class="lineno">   76</span>        train_gen,</div>
-<div class="line"><span class="lineno">   77</span>        steps_per_epoch=len(X_train) // batch_size,</div>
-<div class="line"><span class="lineno">   78</span>        epochs=epochs,</div>
-<div class="line"><span class="lineno">   79</span>        validation_data=val_gen,</div>
-<div class="line"><span class="lineno">   80</span>        validation_steps=len(X_val) // batch_size,</div>
-<div class="line"><span class="lineno">   81</span>        callbacks=callbacks</div>
-<div class="line"><span class="lineno">   82</span>    )</div>
-<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">return</span> history</div>
+<p class="definition">Definition at line <a class="el" href="training_8py_source.html#l00061">61</a> of file <a class="el" href="training_8py_source.html">training.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span><span class="keyword">def </span>train_model(model, train_gen, val_gen, X_train, X_val, batch_size=16, epochs=100, model_name=&quot;model&quot;):</div>
+<div class="line"><span class="lineno">   62</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   63</span><span class="stringliteral">    @brief Trains a Keras model using the provided generators.</span></div>
+<div class="line"><span class="lineno">   64</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">   65</span><span class="stringliteral">    This function fits the model on the training data using data generators for augmentation,</span></div>
+<div class="line"><span class="lineno">   66</span><span class="stringliteral">    validates on the validation data, and applies callbacks for early stopping and model checkpointing.</span></div>
+<div class="line"><span class="lineno">   67</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">   68</span><span class="stringliteral">    @param model (Model): Compiled Keras model to train.</span></div>
+<div class="line"><span class="lineno">   69</span><span class="stringliteral">    @param train_gen (generator): Training data generator.</span></div>
+<div class="line"><span class="lineno">   70</span><span class="stringliteral">    @param val_gen (generator): Validation data generator.</span></div>
+<div class="line"><span class="lineno">   71</span><span class="stringliteral">    @param X_train (numpy.ndarray): Number of training samples.</span></div>
+<div class="line"><span class="lineno">   72</span><span class="stringliteral">    @param X_val (numpy.ndarray): Number of validation samples.</span></div>
+<div class="line"><span class="lineno">   73</span><span class="stringliteral">    @param batch_size (int, optional): Number of samples per batch. Default is 16.</span></div>
+<div class="line"><span class="lineno">   74</span><span class="stringliteral">    @param epochs (int, optional): Maximum number of training epochs. Default is 100.</span></div>
+<div class="line"><span class="lineno">   75</span><span class="stringliteral">    @param model_name (str, optional): Name of the model for saving the best weights. Default is &quot;model&quot;.</span></div>
+<div class="line"><span class="lineno">   76</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">   77</span><span class="stringliteral">    @return History: Keras History object containing training history.</span></div>
+<div class="line"><span class="lineno">   78</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   79</span>    model_checkpoint_path = f<span class="stringliteral">&#39;models/{model_name}_best_model.keras&#39;</span></div>
+<div class="line"><span class="lineno">   80</span>    callbacks = get_callbacks(model_checkpoint_path)</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>    history = model.fit(</div>
+<div class="line"><span class="lineno">   83</span>        train_gen,</div>
+<div class="line"><span class="lineno">   84</span>        steps_per_epoch=len(X_train) // batch_size,</div>
+<div class="line"><span class="lineno">   85</span>        epochs=epochs,</div>
+<div class="line"><span class="lineno">   86</span>        validation_data=val_gen,</div>
+<div class="line"><span class="lineno">   87</span>        validation_steps=len(X_val) // batch_size,</div>
+<div class="line"><span class="lineno">   88</span>        callbacks=callbacks</div>
+<div class="line"><span class="lineno">   89</span>    )</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">return</span> history</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span> </div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacesrc_1_1training_a6b6879a7c53233c9f0349fbec3e16d53_cgraph.png" border="0" usemap="#anamespacesrc_1_1training_a6b6879a7c53233c9f0349fbec3e16d53_cgraph" alt=""/></div>
-<map name="anamespacesrc_1_1training_a6b6879a7c53233c9f0349fbec3e16d53_cgraph" id="anamespacesrc_1_1training_a6b6879a7c53233c9f0349fbec3e16d53_cgraph">
+<div class="center"><img src="namespacesrc_1_1training_a81da746d9faff2e7c6e7f8a2c8944073_cgraph.png" border="0" usemap="#anamespacesrc_1_1training_a81da746d9faff2e7c6e7f8a2c8944073_cgraph" alt=""/></div>
+<map name="anamespacesrc_1_1training_a81da746d9faff2e7c6e7f8a2c8944073_cgraph" id="anamespacesrc_1_1training_a81da746d9faff2e7c6e7f8a2c8944073_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,120,46"/>
-<area shape="rect" href="namespacesrc_1_1training.html#ab730b0abad7aebde140c6a1cddb9164e" title=" " alt="" coords="168,13,337,38"/>
+<area shape="rect" href="namespacesrc_1_1training.html#a923e330064e9f49771355a3ad2d1abda" title=" " alt="" coords="168,13,337,38"/>
 <area shape="poly" title=" " alt="" coords="120,23,152,23,152,28,120,28"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acd4aa68a15bc53fef7e4eeef7ddec5de" name="acd4aa68a15bc53fef7e4eeef7ddec5de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd4aa68a15bc53fef7e4eeef7ddec5de">&#9670;&#160;</a></span>train_regression_model()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.training.train_regression_model </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>train_images</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>train_labels</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>val_images</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>val_labels</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>batch_size</em></span><span class="paramdefsep"> = </span><span class="paramdefval">32</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>epochs</em></span><span class="paramdefsep"> = </span><span class="paramdefval">13</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">@brief Trains the regression model for numerical prediction.
+
+@param train_images (numpy.ndarray): Training images.
+@param train_labels (numpy.ndarray): Labels for training images.
+@param val_images (numpy.ndarray): Validation images.
+@param val_labels (numpy.ndarray): Labels for validation images.
+@param batch_size (int, optional): Number of samples per batch. Default is 32.
+@param epochs (int, optional): Maximum number of training epochs. Default is 13.
+
+@return History: Training history for the regression model.
+</pre> 
+<p class="definition">Definition at line <a class="el" href="training_8py_source.html#l00137">137</a> of file <a class="el" href="training_8py_source.html">training.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span><span class="keyword">def </span>train_regression_model(train_images, train_labels, val_images, val_labels, batch_size=32, epochs=13):</div>
+<div class="line"><span class="lineno">  138</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">  139</span><span class="stringliteral">    @brief Trains the regression model for numerical prediction.</span></div>
+<div class="line"><span class="lineno">  140</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">  141</span><span class="stringliteral">    @param train_images (numpy.ndarray): Training images.</span></div>
+<div class="line"><span class="lineno">  142</span><span class="stringliteral">    @param train_labels (numpy.ndarray): Labels for training images.</span></div>
+<div class="line"><span class="lineno">  143</span><span class="stringliteral">    @param val_images (numpy.ndarray): Validation images.</span></div>
+<div class="line"><span class="lineno">  144</span><span class="stringliteral">    @param val_labels (numpy.ndarray): Labels for validation images.</span></div>
+<div class="line"><span class="lineno">  145</span><span class="stringliteral">    @param batch_size (int, optional): Number of samples per batch. Default is 32.</span></div>
+<div class="line"><span class="lineno">  146</span><span class="stringliteral">    @param epochs (int, optional): Maximum number of training epochs. Default is 13.</span></div>
+<div class="line"><span class="lineno">  147</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">  148</span><span class="stringliteral">    @return History: Training history for the regression model.</span></div>
+<div class="line"><span class="lineno">  149</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">  150</span>    model = create_regression_model(input_shape=(160, 160, 1))</div>
+<div class="line"><span class="lineno">  151</span>    model.compile(optimizer=<span class="stringliteral">&#39;adam&#39;</span>, loss=<span class="stringliteral">&#39;mean_squared_error&#39;</span>, metrics=[<span class="stringliteral">&#39;mae&#39;</span>])</div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>    callbacks = get_callbacks(model_checkpoint_path=<span class="stringliteral">&#39;models/regression_model_best_model.keras&#39;</span>)</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>    history = model.fit(</div>
+<div class="line"><span class="lineno">  156</span>        train_images, train_labels,</div>
+<div class="line"><span class="lineno">  157</span>        validation_data=(val_images, val_labels),</div>
+<div class="line"><span class="lineno">  158</span>        batch_size=batch_size,</div>
+<div class="line"><span class="lineno">  159</span>        epochs=epochs,</div>
+<div class="line"><span class="lineno">  160</span>        callbacks=callbacks</div>
+<div class="line"><span class="lineno">  161</span>    )</div>
+<div class="line"><span class="lineno">  162</span>    <span class="keywordflow">return</span> history</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span> </div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacesrc_1_1training_acd4aa68a15bc53fef7e4eeef7ddec5de_cgraph.png" border="0" usemap="#anamespacesrc_1_1training_acd4aa68a15bc53fef7e4eeef7ddec5de_cgraph" alt=""/></div>
+<map name="anamespacesrc_1_1training_acd4aa68a15bc53fef7e4eeef7ddec5de_cgraph" id="anamespacesrc_1_1training_acd4aa68a15bc53fef7e4eeef7ddec5de_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,136,46"/>
+<area shape="rect" href="namespacesrc_1_1training.html#a923e330064e9f49771355a3ad2d1abda" title=" " alt="" coords="184,13,353,38"/>
+<area shape="poly" title=" " alt="" coords="136,23,168,23,168,28,136,28"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af36ece9e32e12cada47cd0795d42e770" name="af36ece9e32e12cada47cd0795d42e770"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af36ece9e32e12cada47cd0795d42e770">&#9670;&#160;</a></span>train_unet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.training.train_unet </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>train_gen</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>val_gen</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>X_train</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>X_val</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">@brief Trains the U-Net model for line segmentation.
+
+@param train_gen (generator): Training data generator.
+@param val_gen (generator): Validation data generator.
+@param X_train (numpy.ndarray): Training data.
+@param X_val (numpy.ndarray): Validation data.
+
+@return History: Training history for U-Net model.
+</pre> 
+<p class="definition">Definition at line <a class="el" href="training_8py_source.html#l00093">93</a> of file <a class="el" href="training_8py_source.html">training.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span><span class="keyword">def </span>train_unet(train_gen, val_gen, X_train, X_val):</div>
+<div class="line"><span class="lineno">   94</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   95</span><span class="stringliteral">    @brief Trains the U-Net model for line segmentation.</span></div>
+<div class="line"><span class="lineno">   96</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">   97</span><span class="stringliteral">    @param train_gen (generator): Training data generator.</span></div>
+<div class="line"><span class="lineno">   98</span><span class="stringliteral">    @param val_gen (generator): Validation data generator.</span></div>
+<div class="line"><span class="lineno">   99</span><span class="stringliteral">    @param X_train (numpy.ndarray): Training data.</span></div>
+<div class="line"><span class="lineno">  100</span><span class="stringliteral">    @param X_val (numpy.ndarray): Validation data.</span></div>
+<div class="line"><span class="lineno">  101</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">  102</span><span class="stringliteral">    @return History: Training history for U-Net model.</span></div>
+<div class="line"><span class="lineno">  103</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">  104</span>    model = unet_model(input_size=(160, 160, 1))</div>
+<div class="line"><span class="lineno">  105</span>    model = compile_model(model, loss=<span class="stringliteral">&#39;binary_crossentropy&#39;</span>, learning_rate=1e-4)</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">return</span> train_model(model, train_gen, val_gen, X_train, X_val, model_name=<span class="stringliteral">&quot;unet&quot;</span>)</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span> </div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacesrc_1_1training_af36ece9e32e12cada47cd0795d42e770_cgraph.png" border="0" usemap="#anamespacesrc_1_1training_af36ece9e32e12cada47cd0795d42e770_cgraph" alt=""/></div>
+<map name="anamespacesrc_1_1training_af36ece9e32e12cada47cd0795d42e770_cgraph" id="anamespacesrc_1_1training_af36ece9e32e12cada47cd0795d42e770_cgraph">
+<area shape="rect" title=" " alt="" coords="5,46,152,72"/>
+<area shape="rect" href="namespacesrc_1_1training.html#a26c806475e10a3af3feaf95e609bacbc" title=" " alt="" coords="200,5,334,46"/>
+<area shape="poly" title=" " alt="" coords="152,43,184,38,185,43,153,49"/>
+<area shape="rect" href="namespacesrc_1_1training.html#a81da746d9faff2e7c6e7f8a2c8944073" title=" " alt="" coords="210,71,324,111"/>
+<area shape="poly" title=" " alt="" coords="153,69,195,76,194,81,152,74"/>
+<area shape="rect" href="namespacesrc_1_1training.html#a923e330064e9f49771355a3ad2d1abda" title=" " alt="" coords="382,78,551,104"/>
+<area shape="poly" title=" " alt="" coords="324,88,366,88,366,94,324,94"/>
 </map>
 </div>
 

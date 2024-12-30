@@ -101,16 +101,123 @@ Functions</h2></td></tr>
 <tr class="separator:a137241bd7c38b1b390cd24907ed78efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab688034e00097295894d1c5d4fa26fd3" id="r_ab688034e00097295894d1c5d4fa26fd3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab688034e00097295894d1c5d4fa26fd3">compute_dice</a> (y_true, y_pred)</td></tr>
 <tr class="separator:ab688034e00097295894d1c5d4fa26fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6deb21d37f505fddcce3bcfd9180cb2f" id="r_a6deb21d37f505fddcce3bcfd9180cb2f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6deb21d37f505fddcce3bcfd9180cb2f">compute_metrics_over_validation</a> (X_val, y_val, model)</td></tr>
-<tr class="separator:a6deb21d37f505fddcce3bcfd9180cb2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecf7bc1378d6875194756de69eb51025" id="r_aecf7bc1378d6875194756de69eb51025"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecf7bc1378d6875194756de69eb51025">compute_advanced_metrics</a> (y_true, y_pred, threshold=0.5)</td></tr>
+<tr class="separator:aecf7bc1378d6875194756de69eb51025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3df3a9db87d008d3884c97575c31c37f" id="r_a3df3a9db87d008d3884c97575c31c37f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3df3a9db87d008d3884c97575c31c37f">compute_metrics_over_validation</a> (X_val, y_val, model, advanced=False, threshold=0.5)</td></tr>
+<tr class="separator:a3df3a9db87d008d3884c97575c31c37f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">@file metrics.py
 @brief Module for computing evaluation metrics for model predictions.
     
-This module provides functions to compute the Intersection over Union (IoU) and Dice Coefficient
-for evaluating the performance of segmentation models.
+This module provides functions to compute the Intersection over Union (IoU), Dice Coefficient,
+and additional metrics for evaluating segmentation models. It supports both binary masks and
+models that include confidence scores.
 </pre> </div><h2 class="groupheader">Function Documentation</h2>
+<a id="aecf7bc1378d6875194756de69eb51025" name="aecf7bc1378d6875194756de69eb51025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecf7bc1378d6875194756de69eb51025">&#9670;&#160;</a></span>compute_advanced_metrics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.metrics.compute_advanced_metrics </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_true</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y_pred</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>threshold</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.5</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">@brief Computes metrics for Advanced models with confidence scores.
+
+This function calculates the IoU and Dice Coefficient for predicted line coordinates
+while accounting for confidence scores. Predictions below the confidence threshold
+are treated as absent lines.
+
+@param y_true (numpy.ndarray): Ground truth tensor of shape (batch_size, 8, 5).
+                               Last dimension contains (x1, y1, x2, y2, confidence).
+@param y_pred (numpy.ndarray): Predicted tensor of shape (batch_size, 8, 5).
+@param threshold (float, optional): Confidence threshold for predictions. Default is 0.5.
+
+@return tuple: Mean IoU and Mean Dice Coefficient for all samples.
+</pre> 
+<p class="definition">Definition at line <a class="el" href="metrics_8py_source.html#l00049">49</a> of file <a class="el" href="metrics_8py_source.html">metrics.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span><span class="keyword">def </span>compute_advanced_metrics(y_true, y_pred, threshold=0.5):</div>
+<div class="line"><span class="lineno">   50</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   51</span><span class="stringliteral">    @brief Computes metrics for Advanced models with confidence scores.</span></div>
+<div class="line"><span class="lineno">   52</span><span class="stringliteral">    </span></div>
+<div class="line"><span class="lineno">   53</span><span class="stringliteral">    This function calculates the IoU and Dice Coefficient for predicted line coordinates</span></div>
+<div class="line"><span class="lineno">   54</span><span class="stringliteral">    while accounting for confidence scores. Predictions below the confidence threshold</span></div>
+<div class="line"><span class="lineno">   55</span><span class="stringliteral">    are treated as absent lines.</span></div>
+<div class="line"><span class="lineno">   56</span><span class="stringliteral">    </span></div>
+<div class="line"><span class="lineno">   57</span><span class="stringliteral">    @param y_true (numpy.ndarray): Ground truth tensor of shape (batch_size, 8, 5).</span></div>
+<div class="line"><span class="lineno">   58</span><span class="stringliteral">                                   Last dimension contains (x1, y1, x2, y2, confidence).</span></div>
+<div class="line"><span class="lineno">   59</span><span class="stringliteral">    @param y_pred (numpy.ndarray): Predicted tensor of shape (batch_size, 8, 5).</span></div>
+<div class="line"><span class="lineno">   60</span><span class="stringliteral">    @param threshold (float, optional): Confidence threshold for predictions. Default is 0.5.</span></div>
+<div class="line"><span class="lineno">   61</span><span class="stringliteral">    </span></div>
+<div class="line"><span class="lineno">   62</span><span class="stringliteral">    @return tuple: Mean IoU and Mean Dice Coefficient for all samples.</span></div>
+<div class="line"><span class="lineno">   63</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   64</span>    pred_coords = y_pred[:, :, :4]</div>
+<div class="line"><span class="lineno">   65</span>    pred_conf = y_pred[:, :, 4:]</div>
+<div class="line"><span class="lineno">   66</span>    true_coords = y_true[:, :, :4]</div>
+<div class="line"><span class="lineno">   67</span>    true_conf = y_true[:, :, 4:]</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    ious = []</div>
+<div class="line"><span class="lineno">   70</span>    dice_scores = []</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(y_true.shape[0]):  <span class="comment"># Iterate over batch</span></div>
+<div class="line"><span class="lineno">   73</span>        pred_coords_thresh = pred_coords[i][pred_conf[i].squeeze() &gt; threshold]</div>
+<div class="line"><span class="lineno">   74</span>        true_coords_thresh = true_coords[i][true_conf[i].squeeze() &gt; threshold]</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>        <span class="keywordflow">if</span> len(pred_coords_thresh) == 0 <span class="keywordflow">and</span> len(true_coords_thresh) == 0:</div>
+<div class="line"><span class="lineno">   77</span>            ious.append(1.0)</div>
+<div class="line"><span class="lineno">   78</span>            dice_scores.append(1.0)</div>
+<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">continue</span></div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>        pred_mask = np.zeros((160, 160))</div>
+<div class="line"><span class="lineno">   82</span>        true_mask = np.zeros((160, 160))</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">for</span> line <span class="keywordflow">in</span> pred_coords_thresh:</div>
+<div class="line"><span class="lineno">   85</span>            x1, y1, x2, y2 = (line * 160).astype(int)</div>
+<div class="line"><span class="lineno">   86</span>            pred_mask = cv2.line(pred_mask, (x1, y1), (x2, y2), 1, thickness=2)</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">for</span> line <span class="keywordflow">in</span> true_coords_thresh:</div>
+<div class="line"><span class="lineno">   89</span>            x1, y1, x2, y2 = (line * 160).astype(int)</div>
+<div class="line"><span class="lineno">   90</span>            true_mask = cv2.line(true_mask, (x1, y1), (x2, y2), 1, thickness=2)</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>        ious.append(compute_iou(true_mask, pred_mask))</div>
+<div class="line"><span class="lineno">   93</span>        dice_scores.append(compute_dice(true_mask, pred_mask))</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    mean_iou = np.mean(ious)</div>
+<div class="line"><span class="lineno">   96</span>    mean_dice = np.mean(dice_scores)</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">return</span> mean_iou, mean_dice</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span> </div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacesrc_1_1metrics_aecf7bc1378d6875194756de69eb51025_cgraph.png" border="0" usemap="#anamespacesrc_1_1metrics_aecf7bc1378d6875194756de69eb51025_cgraph" alt=""/></div>
+<map name="anamespacesrc_1_1metrics_aecf7bc1378d6875194756de69eb51025_cgraph" id="anamespacesrc_1_1metrics_aecf7bc1378d6875194756de69eb51025_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,146,64"/>
+<area shape="rect" href="namespacesrc_1_1metrics.html#ab688034e00097295894d1c5d4fa26fd3" title=" " alt="" coords="194,5,365,31"/>
+<area shape="poly" title=" " alt="" coords="146,32,178,28,179,33,146,37"/>
+<area shape="rect" href="namespacesrc_1_1metrics.html#a137241bd7c38b1b390cd24907ed78efb" title=" " alt="" coords="197,55,362,80"/>
+<area shape="poly" title=" " alt="" coords="146,49,182,53,181,59,146,54"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="ab688034e00097295894d1c5d4fa26fd3" name="ab688034e00097295894d1c5d4fa26fd3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab688034e00097295894d1c5d4fa26fd3">&#9670;&#160;</a></span>compute_dice()</h2>
 
@@ -139,25 +246,25 @@ the predicted segmentation and the ground truth.
 
 @return float: Dice Coefficient score.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="metrics_8py_source.html#l00029">29</a> of file <a class="el" href="metrics_8py_source.html">metrics.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span><span class="keyword">def </span>compute_dice(y_true, y_pred):</div>
-<div class="line"><span class="lineno">   30</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   31</span><span class="stringliteral">    @brief Computes the Dice Coefficient between ground truth and prediction.</span></div>
-<div class="line"><span class="lineno">   32</span><span class="stringliteral">    </span></div>
-<div class="line"><span class="lineno">   33</span><span class="stringliteral">    This function calculates the Dice Coefficient, which measures the similarity between</span></div>
-<div class="line"><span class="lineno">   34</span><span class="stringliteral">    the predicted segmentation and the ground truth.</span></div>
-<div class="line"><span class="lineno">   35</span><span class="stringliteral">    </span></div>
-<div class="line"><span class="lineno">   36</span><span class="stringliteral">    @param y_true (numpy.ndarray): Ground truth binary mask.</span></div>
-<div class="line"><span class="lineno">   37</span><span class="stringliteral">    @param y_pred (numpy.ndarray): Predicted binary mask.</span></div>
-<div class="line"><span class="lineno">   38</span><span class="stringliteral">    </span></div>
-<div class="line"><span class="lineno">   39</span><span class="stringliteral">    @return float: Dice Coefficient score.</span></div>
-<div class="line"><span class="lineno">   40</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   41</span>    intersection = np.logical_and(y_true, y_pred).sum()</div>
-<div class="line"><span class="lineno">   42</span>    sum_masks = y_true.sum() + y_pred.sum()</div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">if</span> sum_masks == 0:</div>
-<div class="line"><span class="lineno">   44</span>        <span class="keywordflow">return</span> 1.0  <span class="comment"># If both masks are empty, define Dice as 1</span></div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span> (2. * intersection) / sum_masks</div>
-<div class="line"><span class="lineno">   46</span> </div>
+<p class="definition">Definition at line <a class="el" href="metrics_8py_source.html#l00031">31</a> of file <a class="el" href="metrics_8py_source.html">metrics.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span><span class="keyword">def </span>compute_dice(y_true, y_pred):</div>
+<div class="line"><span class="lineno">   32</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   33</span><span class="stringliteral">    @brief Computes the Dice Coefficient between ground truth and prediction.</span></div>
+<div class="line"><span class="lineno">   34</span><span class="stringliteral">    </span></div>
+<div class="line"><span class="lineno">   35</span><span class="stringliteral">    This function calculates the Dice Coefficient, which measures the similarity between</span></div>
+<div class="line"><span class="lineno">   36</span><span class="stringliteral">    the predicted segmentation and the ground truth.</span></div>
+<div class="line"><span class="lineno">   37</span><span class="stringliteral">    </span></div>
+<div class="line"><span class="lineno">   38</span><span class="stringliteral">    @param y_true (numpy.ndarray): Ground truth binary mask.</span></div>
+<div class="line"><span class="lineno">   39</span><span class="stringliteral">    @param y_pred (numpy.ndarray): Predicted binary mask.</span></div>
+<div class="line"><span class="lineno">   40</span><span class="stringliteral">    </span></div>
+<div class="line"><span class="lineno">   41</span><span class="stringliteral">    @return float: Dice Coefficient score.</span></div>
+<div class="line"><span class="lineno">   42</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   43</span>    intersection = np.logical_and(y_true, y_pred).sum()</div>
+<div class="line"><span class="lineno">   44</span>    sum_masks = y_true.sum() + y_pred.sum()</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> sum_masks == 0:</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span> 1.0  <span class="comment"># If both masks are empty, define Dice as 1</span></div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">return</span> (2. * intersection) / sum_masks</div>
+<div class="line"><span class="lineno">   48</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -189,30 +296,30 @@ segmentation and the ground truth.
 
 @return float: IoU score.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="metrics_8py_source.html#l00011">11</a> of file <a class="el" href="metrics_8py_source.html">metrics.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   11</span><span class="keyword">def </span>compute_iou(y_true, y_pred):</div>
-<div class="line"><span class="lineno">   12</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   13</span><span class="stringliteral">    @brief Computes the Intersection over Union (IoU) between ground truth and prediction.</span></div>
-<div class="line"><span class="lineno">   14</span><span class="stringliteral">    </span></div>
-<div class="line"><span class="lineno">   15</span><span class="stringliteral">    This function calculates the IoU metric, which measures the overlap between the predicted</span></div>
-<div class="line"><span class="lineno">   16</span><span class="stringliteral">    segmentation and the ground truth.</span></div>
-<div class="line"><span class="lineno">   17</span><span class="stringliteral">    </span></div>
-<div class="line"><span class="lineno">   18</span><span class="stringliteral">    @param y_true (numpy.ndarray): Ground truth binary mask.</span></div>
-<div class="line"><span class="lineno">   19</span><span class="stringliteral">    @param y_pred (numpy.ndarray): Predicted binary mask.</span></div>
-<div class="line"><span class="lineno">   20</span><span class="stringliteral">    </span></div>
-<div class="line"><span class="lineno">   21</span><span class="stringliteral">    @return float: IoU score.</span></div>
-<div class="line"><span class="lineno">   22</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   23</span>    intersection = np.logical_and(y_true, y_pred).sum()</div>
-<div class="line"><span class="lineno">   24</span>    union = np.logical_or(y_true, y_pred).sum()</div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span> union == 0:</div>
-<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">return</span> 1.0  <span class="comment"># If both masks are empty, define IoU as 1</span></div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">return</span> intersection / union</div>
-<div class="line"><span class="lineno">   28</span> </div>
+<p class="definition">Definition at line <a class="el" href="metrics_8py_source.html#l00013">13</a> of file <a class="el" href="metrics_8py_source.html">metrics.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span><span class="keyword">def </span>compute_iou(y_true, y_pred):</div>
+<div class="line"><span class="lineno">   14</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   15</span><span class="stringliteral">    @brief Computes the Intersection over Union (IoU) between ground truth and prediction.</span></div>
+<div class="line"><span class="lineno">   16</span><span class="stringliteral">    </span></div>
+<div class="line"><span class="lineno">   17</span><span class="stringliteral">    This function calculates the IoU metric, which measures the overlap between the predicted</span></div>
+<div class="line"><span class="lineno">   18</span><span class="stringliteral">    segmentation and the ground truth.</span></div>
+<div class="line"><span class="lineno">   19</span><span class="stringliteral">    </span></div>
+<div class="line"><span class="lineno">   20</span><span class="stringliteral">    @param y_true (numpy.ndarray): Ground truth binary mask.</span></div>
+<div class="line"><span class="lineno">   21</span><span class="stringliteral">    @param y_pred (numpy.ndarray): Predicted binary mask.</span></div>
+<div class="line"><span class="lineno">   22</span><span class="stringliteral">    </span></div>
+<div class="line"><span class="lineno">   23</span><span class="stringliteral">    @return float: IoU score.</span></div>
+<div class="line"><span class="lineno">   24</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   25</span>    intersection = np.logical_and(y_true, y_pred).sum()</div>
+<div class="line"><span class="lineno">   26</span>    union = np.logical_or(y_true, y_pred).sum()</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> union == 0:</div>
+<div class="line"><span class="lineno">   28</span>        <span class="keywordflow">return</span> 1.0  <span class="comment"># If both masks are empty, define IoU as 1</span></div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">return</span> intersection / union</div>
+<div class="line"><span class="lineno">   30</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a6deb21d37f505fddcce3bcfd9180cb2f" name="a6deb21d37f505fddcce3bcfd9180cb2f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6deb21d37f505fddcce3bcfd9180cb2f">&#9670;&#160;</a></span>compute_metrics_over_validation()</h2>
+<a id="a3df3a9db87d008d3884c97575c31c37f" name="a3df3a9db87d008d3884c97575c31c37f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3df3a9db87d008d3884c97575c31c37f">&#9670;&#160;</a></span>compute_metrics_over_validation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,79 +337,98 @@ segmentation and the ground truth.
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>model</em></span>&#160;)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>model</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>advanced</em></span><span class="paramdefsep"> = </span><span class="paramdefval">False</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>threshold</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.5</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">@brief Computes IoU and Dice Coefficient over the entire validation set.
 
 This function generates predictions for the validation set using the trained model and
-computes the IoU and Dice Coefficient for each sample. It returns the mean IoU and Dice
-scores across all validation samples.
+computes the IoU and Dice Coefficient for each sample. For advanced models, it also
+considers confidence scores in the evaluation.
 
 @param X_val (numpy.ndarray): Validation input images.
-@param y_val (numpy.ndarray): Ground truth masks.
-@param model (tensorflow.keras.Model): Trained U-Net model.
+@param y_val (numpy.ndarray): Ground truth masks or labels (coordinates + confidence scores).
+@param model (tensorflow.keras.Model): Trained model (U-Net or Advanced).
+@param advanced (bool, optional): Whether the model is advanced (predicting confidence scores). Default is False.
+@param threshold (float, optional): Confidence threshold for advanced models. Default is 0.5.
 
 @return tuple: Mean IoU and Mean Dice Coefficient.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="metrics_8py_source.html#l00047">47</a> of file <a class="el" href="metrics_8py_source.html">metrics.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   47</span><span class="keyword">def </span>compute_metrics_over_validation(X_val, y_val, model):</div>
-<div class="line"><span class="lineno">   48</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   49</span><span class="stringliteral">    @brief Computes IoU and Dice Coefficient over the entire validation set.</span></div>
-<div class="line"><span class="lineno">   50</span><span class="stringliteral">    </span></div>
-<div class="line"><span class="lineno">   51</span><span class="stringliteral">    This function generates predictions for the validation set using the trained model and</span></div>
-<div class="line"><span class="lineno">   52</span><span class="stringliteral">    computes the IoU and Dice Coefficient for each sample. It returns the mean IoU and Dice</span></div>
-<div class="line"><span class="lineno">   53</span><span class="stringliteral">    scores across all validation samples.</span></div>
-<div class="line"><span class="lineno">   54</span><span class="stringliteral">    </span></div>
-<div class="line"><span class="lineno">   55</span><span class="stringliteral">    @param X_val (numpy.ndarray): Validation input images.</span></div>
-<div class="line"><span class="lineno">   56</span><span class="stringliteral">    @param y_val (numpy.ndarray): Ground truth masks.</span></div>
-<div class="line"><span class="lineno">   57</span><span class="stringliteral">    @param model (tensorflow.keras.Model): Trained U-Net model.</span></div>
-<div class="line"><span class="lineno">   58</span><span class="stringliteral">    </span></div>
-<div class="line"><span class="lineno">   59</span><span class="stringliteral">    @return tuple: Mean IoU and Mean Dice Coefficient.</span></div>
-<div class="line"><span class="lineno">   60</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   61</span>    print(<span class="stringliteral">&quot;Generating predictions for the entire validation set...&quot;</span>)</div>
-<div class="line"><span class="lineno">   62</span>    pred_masks = model.predict(X_val)</div>
-<div class="line"><span class="lineno">   63</span>    pred_masks = (pred_masks &gt; 0.5).astype(np.float32)  <span class="comment"># Thresholding to obtain binary masks</span></div>
-<div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>    ious = []</div>
-<div class="line"><span class="lineno">   66</span>    dice_scores = []</div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>    print(<span class="stringliteral">&quot;Calculating IoU and Dice Coefficient for each sample...&quot;</span>)</div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(len(X_val)):</div>
-<div class="line"><span class="lineno">   70</span>        y_true_binary = y_val[i].squeeze().astype(np.float32)</div>
-<div class="line"><span class="lineno">   71</span>        y_pred_binary = pred_masks[i].squeeze().astype(np.float32)</div>
-<div class="line"><span class="lineno">   72</span>        </div>
-<div class="line"><span class="lineno">   73</span>        <span class="comment"># Ensure binary masks</span></div>
-<div class="line"><span class="lineno">   74</span>        y_true_binary = (y_true_binary &gt; 0.5).astype(np.float32)</div>
-<div class="line"><span class="lineno">   75</span>        y_pred_binary = (y_pred_binary &gt; 0.5).astype(np.float32)</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>        iou = compute_iou(y_true_binary, y_pred_binary)</div>
-<div class="line"><span class="lineno">   78</span>        dice = compute_dice(y_true_binary, y_pred_binary)</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>        ious.append(iou)</div>
-<div class="line"><span class="lineno">   81</span>        dice_scores.append(dice)</div>
-<div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">if</span> (i+1) % 500 == 0 <span class="keywordflow">or</span> (i+1) == len(X_val):</div>
-<div class="line"><span class="lineno">   84</span>            print(f<span class="stringliteral">&quot;Processed {i+1}/{len(X_val)} samples.&quot;</span>)</div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>    mean_iou = np.mean(ious)</div>
-<div class="line"><span class="lineno">   87</span>    mean_dice = np.mean(dice_scores)</div>
-<div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>    print(f<span class="stringliteral">&quot;Mean IoU over the entire validation set: {mean_iou:.4f}&quot;</span>)</div>
-<div class="line"><span class="lineno">   90</span>    print(f<span class="stringliteral">&quot;Mean Dice Coefficient over the entire validation set: {mean_dice:.4f}&quot;</span>)</div>
-<div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">return</span> mean_iou, mean_dice</div>
+<p class="definition">Definition at line <a class="el" href="metrics_8py_source.html#l00101">101</a> of file <a class="el" href="metrics_8py_source.html">metrics.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  101</span><span class="keyword">def </span>compute_metrics_over_validation(X_val, y_val, model, advanced=False, threshold=0.5):</div>
+<div class="line"><span class="lineno">  102</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">  103</span><span class="stringliteral">    @brief Computes IoU and Dice Coefficient over the entire validation set.</span></div>
+<div class="line"><span class="lineno">  104</span><span class="stringliteral">    </span></div>
+<div class="line"><span class="lineno">  105</span><span class="stringliteral">    This function generates predictions for the validation set using the trained model and</span></div>
+<div class="line"><span class="lineno">  106</span><span class="stringliteral">    computes the IoU and Dice Coefficient for each sample. For advanced models, it also</span></div>
+<div class="line"><span class="lineno">  107</span><span class="stringliteral">    considers confidence scores in the evaluation.</span></div>
+<div class="line"><span class="lineno">  108</span><span class="stringliteral">    </span></div>
+<div class="line"><span class="lineno">  109</span><span class="stringliteral">    @param X_val (numpy.ndarray): Validation input images.</span></div>
+<div class="line"><span class="lineno">  110</span><span class="stringliteral">    @param y_val (numpy.ndarray): Ground truth masks or labels (coordinates + confidence scores).</span></div>
+<div class="line"><span class="lineno">  111</span><span class="stringliteral">    @param model (tensorflow.keras.Model): Trained model (U-Net or Advanced).</span></div>
+<div class="line"><span class="lineno">  112</span><span class="stringliteral">    @param advanced (bool, optional): Whether the model is advanced (predicting confidence scores). Default is False.</span></div>
+<div class="line"><span class="lineno">  113</span><span class="stringliteral">    @param threshold (float, optional): Confidence threshold for advanced models. Default is 0.5.</span></div>
+<div class="line"><span class="lineno">  114</span><span class="stringliteral">    </span></div>
+<div class="line"><span class="lineno">  115</span><span class="stringliteral">    @return tuple: Mean IoU and Mean Dice Coefficient.</span></div>
+<div class="line"><span class="lineno">  116</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">  117</span>    print(<span class="stringliteral">&quot;Generating predictions for the entire validation set...&quot;</span>)</div>
+<div class="line"><span class="lineno">  118</span>    pred = model.predict(X_val)</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">if</span> advanced:</div>
+<div class="line"><span class="lineno">  121</span>        print(<span class="stringliteral">&quot;Evaluating metrics for Advanced Model with confidence scores...&quot;</span>)</div>
+<div class="line"><span class="lineno">  122</span>        mean_iou, mean_dice = compute_advanced_metrics(y_val, pred, threshold)</div>
+<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  124</span>        print(<span class="stringliteral">&quot;Evaluating metrics for U-Net Model...&quot;</span>)</div>
+<div class="line"><span class="lineno">  125</span>        pred_masks = (pred &gt; 0.5).astype(np.float32)  <span class="comment"># Threshold for binary masks</span></div>
+<div class="line"><span class="lineno">  126</span>        ious = []</div>
+<div class="line"><span class="lineno">  127</span>        dice_scores = []</div>
+<div class="line"><span class="lineno">  128</span> </div>
+<div class="line"><span class="lineno">  129</span>        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(len(X_val)):</div>
+<div class="line"><span class="lineno">  130</span>            y_true_binary = y_val[i].squeeze().astype(np.float32)</div>
+<div class="line"><span class="lineno">  131</span>            y_pred_binary = pred_masks[i].squeeze().astype(np.float32)</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>            <span class="comment"># Ensure binary masks</span></div>
+<div class="line"><span class="lineno">  134</span>            y_true_binary = (y_true_binary &gt; 0.5).astype(np.float32)</div>
+<div class="line"><span class="lineno">  135</span>            y_pred_binary = (y_pred_binary &gt; 0.5).astype(np.float32)</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>            iou = compute_iou(y_true_binary, y_pred_binary)</div>
+<div class="line"><span class="lineno">  138</span>            dice = compute_dice(y_true_binary, y_pred_binary)</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>            ious.append(iou)</div>
+<div class="line"><span class="lineno">  141</span>            dice_scores.append(dice)</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>        mean_iou = np.mean(ious)</div>
+<div class="line"><span class="lineno">  144</span>        mean_dice = np.mean(dice_scores)</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>    print(f<span class="stringliteral">&quot;Mean IoU over the validation set: {mean_iou:.4f}&quot;</span>)</div>
+<div class="line"><span class="lineno">  147</span>    print(f<span class="stringliteral">&quot;Mean Dice Coefficient over the validation set: {mean_dice:.4f}&quot;</span>)</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">return</span> mean_iou, mean_dice</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacesrc_1_1metrics_a6deb21d37f505fddcce3bcfd9180cb2f_cgraph.png" border="0" usemap="#anamespacesrc_1_1metrics_a6deb21d37f505fddcce3bcfd9180cb2f_cgraph" alt=""/></div>
-<map name="anamespacesrc_1_1metrics_a6deb21d37f505fddcce3bcfd9180cb2f_cgraph" id="anamespacesrc_1_1metrics_a6deb21d37f505fddcce3bcfd9180cb2f_cgraph">
-<area shape="rect" title=" " alt="" coords="5,23,171,64"/>
-<area shape="rect" href="namespacesrc_1_1metrics.html#ab688034e00097295894d1c5d4fa26fd3" title=" " alt="" coords="219,5,390,31"/>
-<area shape="poly" title=" " alt="" coords="171,31,203,27,203,33,172,36"/>
-<area shape="rect" href="namespacesrc_1_1metrics.html#a137241bd7c38b1b390cd24907ed78efb" title=" " alt="" coords="222,55,386,80"/>
-<area shape="poly" title=" " alt="" coords="172,50,207,54,206,59,171,55"/>
+<div class="center"><img src="namespacesrc_1_1metrics_a3df3a9db87d008d3884c97575c31c37f_cgraph.png" border="0" usemap="#anamespacesrc_1_1metrics_a3df3a9db87d008d3884c97575c31c37f_cgraph" alt=""/></div>
+<map name="anamespacesrc_1_1metrics_a3df3a9db87d008d3884c97575c31c37f_cgraph" id="anamespacesrc_1_1metrics_a3df3a9db87d008d3884c97575c31c37f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,24,171,65"/>
+<area shape="rect" href="namespacesrc_1_1metrics.html#aecf7bc1378d6875194756de69eb51025" title=" " alt="" coords="219,24,359,65"/>
+<area shape="poly" title=" " alt="" coords="171,42,204,42,204,48,171,48"/>
+<area shape="rect" href="namespacesrc_1_1metrics.html#ab688034e00097295894d1c5d4fa26fd3" title=" " alt="" coords="407,5,578,31"/>
+<area shape="poly" title=" " alt="" coords="160,21,218,10,307,5,392,7,392,12,307,10,219,15,161,26"/>
+<area shape="rect" href="namespacesrc_1_1metrics.html#a137241bd7c38b1b390cd24907ed78efb" title=" " alt="" coords="410,59,575,84"/>
+<area shape="poly" title=" " alt="" coords="161,63,219,74,309,79,395,77,395,83,309,85,218,79,160,68"/>
+<area shape="poly" title=" " alt="" coords="359,33,391,29,392,34,360,38"/>
+<area shape="poly" title=" " alt="" coords="360,51,395,56,394,61,359,57"/>
 </map>
 </div>
 

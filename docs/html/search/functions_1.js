@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['debug_5fdetected_5flines_0',['debug_detected_lines',['../namespacesrc_1_1post__processing.html#ab5acd8a5096594413cadce4e0e0a2651',1,'src::post_processing']]],
-  ['detect_5flines_5fskeleton_1',['detect_lines_skeleton',['../namespacesrc_1_1post__processing.html#a1233fc1ece9488e4cd6424c6ed510037',1,'src::post_processing']]],
-  ['display_5fsample_5fimage_2',['display_sample_image',['../namespacesrc_1_1visualization.html#ad5040c5fc177a8fde23c247491c7a580',1,'src::visualization']]]
+  ['advanced_5floss_0',['advanced_loss',['../namespacesrc_1_1models_1_1advanced__model.html#a302febb6ddf346ce929e80ef5563d4c8',1,'src::models::advanced_model']]],
+  ['apply_5fthreshold_1',['apply_threshold',['../namespacesrc_1_1models_1_1advanced__model.html#a935b76ea28950e32057445640a190c7a',1,'src::models::advanced_model']]],
+  ['apply_5ftransformations_5fto_5flabels_2',['apply_transformations_to_labels',['../namespacesrc_1_1data__augmentation.html#a04d7ff90f9ab7d60dd57ba8e86c63aab',1,'src::data_augmentation']]]
 ];

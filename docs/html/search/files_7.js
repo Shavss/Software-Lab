@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['visualization_2epy_0',['visualization.py',['../visualization_8py.html',1,'']]]
+  ['regression_5fmodel_2epy_0',['regression_model.py',['../regression__model_8py.html',1,'']]]
 ];

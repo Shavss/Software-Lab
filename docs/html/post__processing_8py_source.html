@@ -211,9 +211,9 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        os.makedirs(svg_output_dir)</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">for</span> i, mask <span class="keywordflow">in</span> enumerate(pred_masks):</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        skeleton = <a class="code hl_function" href="namespacesrc_1_1post__processing.html#af066920fecf65056aea4b976c08202f4">post_process_mask</a>(mask)</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        lines = <a class="code hl_function" href="namespacesrc_1_1post__processing.html#a1233fc1ece9488e4cd6424c6ed510037">detect_lines_skeleton</a>(skeleton)</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        filtered_lines = <a class="code hl_function" href="namespacesrc_1_1post__processing.html#a335a9b6ec03df58adac88ad3660ea8a6">merge_nearby_lines</a>(lines)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        skeleton = post_process_mask(mask)</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        lines = detect_lines_skeleton(skeleton)</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        filtered_lines = merge_nearby_lines(lines)</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">if</span> filtered_lines <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <span class="comment"># Save as SVG</span></div>

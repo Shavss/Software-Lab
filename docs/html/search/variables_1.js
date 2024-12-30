@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gdrive_5fpath_0',['gdrive_path',['../namespacesrc_1_1line__drawing__generation.html#a1f0a8436572ab1abed435ae7434e6dc0',1,'src::line_drawing_generation']]]
+  ['advanced_5fmodel_0',['advanced_model',['../namespacesrc_1_1models_1_1advanced__model.html#abd68898e7fd48d4457e9a481c33fc74e',1,'src::models::advanced_model']]]
 ];

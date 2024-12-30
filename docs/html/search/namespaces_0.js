@@ -6,9 +6,14 @@ var searchData=
   ['src_3a_3adata_5fpreprocessing_3',['data_preprocessing',['../namespacesrc_1_1data__preprocessing.html',1,'src']]],
   ['src_3a_3aline_5fdrawing_5fgeneration_4',['line_drawing_generation',['../namespacesrc_1_1line__drawing__generation.html',1,'src']]],
   ['src_3a_3ametrics_5',['metrics',['../namespacesrc_1_1metrics.html',1,'src']]],
-  ['src_3a_3amodel_6',['model',['../namespacesrc_1_1model.html',1,'src']]],
-  ['src_3a_3apost_5fprocessing_7',['post_processing',['../namespacesrc_1_1post__processing.html',1,'src']]],
-  ['src_3a_3atraining_8',['training',['../namespacesrc_1_1training.html',1,'src']]],
-  ['src_3a_3autils_9',['utils',['../namespacesrc_1_1utils.html',1,'src']]],
-  ['src_3a_3avisualization_10',['visualization',['../namespacesrc_1_1visualization.html',1,'src']]]
+  ['src_3a_3amodels_6',['models',['../namespacesrc_1_1models.html',1,'src']]],
+  ['src_3a_3amodels_3a_3aadvanced_5fmodel_7',['advanced_model',['../namespacesrc_1_1models_1_1advanced__model.html',1,'src::models']]],
+  ['src_3a_3amodels_3a_3aenhanced_5fpatch_5ftransformer_8',['enhanced_patch_transformer',['../namespacesrc_1_1models_1_1enhanced__patch__transformer.html',1,'src::models']]],
+  ['src_3a_3amodels_3a_3aregression_5fmodel_9',['regression_model',['../namespacesrc_1_1models_1_1regression__model.html',1,'src::models']]],
+  ['src_3a_3amodels_3a_3aunet_10',['unet',['../namespacesrc_1_1models_1_1unet.html',1,'src::models']]],
+  ['src_3a_3apost_5fprocessing_11',['post_processing',['../namespacesrc_1_1post__processing.html',1,'src']]],
+  ['src_3a_3aprocess_5ftest_5fresults_12',['process_test_results',['../namespacesrc_1_1process__test__results.html',1,'src']]],
+  ['src_3a_3atraining_13',['training',['../namespacesrc_1_1training.html',1,'src']]],
+  ['src_3a_3autils_14',['utils',['../namespacesrc_1_1utils.html',1,'src']]],
+  ['src_3a_3avisualization_15',['visualization',['../namespacesrc_1_1visualization.html',1,'src']]]
 ];

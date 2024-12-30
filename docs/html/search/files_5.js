@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['training_2epy_0',['training.py',['../training_8py.html',1,'']]]
+  ['metrics_2epy_0',['metrics.py',['../metrics_8py.html',1,'']]]
 ];

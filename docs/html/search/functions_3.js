@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['load_5fimage_5fas_5fmatrix_5fcv2_0',['load_image_as_matrix_cv2',['../namespacesrc_1_1utils.html#a6a5b9d7538629084d6a52c03ec2e4a7f',1,'src::utils']]],
-  ['load_5fimages_5ffrom_5fdirectory_1',['load_images_from_directory',['../namespacesrc_1_1utils.html#ab954e3b600b3ece14a0981fd97a5f206',1,'src::utils']]]
+  ['debug_5fdetected_5flines_0',['debug_detected_lines',['../namespacesrc_1_1post__processing.html#ab5acd8a5096594413cadce4e0e0a2651',1,'src::post_processing']]],
+  ['detect_5flines_5fskeleton_1',['detect_lines_skeleton',['../namespacesrc_1_1post__processing.html#a1233fc1ece9488e4cd6424c6ed510037',1,'src::post_processing']]],
+  ['display_5fsample_5fimage_2',['display_sample_image',['../namespacesrc_1_1visualization.html#ad5040c5fc177a8fde23c247491c7a580',1,'src::visualization']]]
 ];
